@@ -7,8 +7,3 @@ Steps to run
 # 5. Restore the nuget packages for Web API
 # 6. Run the Web API project
 # 7. Run the Angular App
-# NetAngularFileUpload
-# NetAngularFileUpload
-# NetAngularFileUpload-
-# NetAngularFileUpload-
-# NetAngularFileUpload
