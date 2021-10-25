@@ -128,8 +128,7 @@ export class FileuploadComponent {
           f.path = result[i].path;
           f.contentType = result[i].mimeType;
           this.attached.push(f)
-        }
-       
+        }       
       });
   }
 }
