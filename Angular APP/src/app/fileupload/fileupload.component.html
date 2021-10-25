@@ -4,13 +4,24 @@
   </div>
   <div class="card-body">
     <div class="container-fluid">
-      <h2>File upload form</h2>
+      <form [formGroup]="fileForm" (ngSubmit)="saveFileInfo()">
+      <div class="form-group">
+        <label for="myFile">File:</label>
+        <input type="file" multiple class="form-control" (change)="handleFilesInput($event)" name="file">
+      </div>
+      
+     <button type="submit" class="btn btn-primary">+</button>
+  </form> 
+ 
+
+<!--       
   <form [formGroup]="fileForm" (ngSubmit)="saveFileInfo()">
     <div class="form-group">
       <label for="myFile">File:</label>
-      <input type="file" class="form-control" (change)="handleFileInput($event)" name="file">
-    </div>
-    <div class="form-group">
+      <input type="file" multiple class="form-control" (change)="handleFileInput($event)" name="file">
+    </div> -->
+
+    <!-- <div class="form-group">
       <label for="pwd">Alt Text:</label>
       <input type="text" class="form-control" formControlName="altText" placeholder="Enter alternate text" name="altText">
     </div>
@@ -18,9 +29,30 @@
       <label for="pwd">Description:</label>
       <input type="text" class="form-control" formControlName="description" placeholder="Enter description" name="description">
     </div>
-    <br/>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <br/> -->
+
+    <!-- <button type="submit" class="btn btn-primary">+</button>
+  </form> -->
+
+    </div>
+    <div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>File Path</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let file of attached">
+            <td>{{file.path}}</td>
+            <td>
+              <input type="button" class="btn btn-success" (click)="downloadFtpFile(file.id, file.contentType)"   value="Download"/>
+              <input type="button" class="btn btn-success" (click)="removeFile(file.id)"  value="Remove"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

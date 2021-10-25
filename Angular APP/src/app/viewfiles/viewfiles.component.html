@@ -17,10 +17,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let file of files">
-          <td>{{file.fileName}}</td>
+          <td>{{file.name}}</td>
           <td>{{file.description}}</td>
           <td>{{file.contentType}}</td>
-          <td>{{file.fileFormat}}</td>
+          <td>{{file.format}}</td>
           <td>
             <input type="button" class="btn btn-success" (click)="downloadFile(file.id, file.contentType)" value="Download"/>
           </td>
