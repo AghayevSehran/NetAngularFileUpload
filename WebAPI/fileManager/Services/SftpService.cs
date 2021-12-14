@@ -17,9 +17,9 @@ namespace fileManager.Services
         {
             SFTPUser = new SFTPUser()
             {
-                UserName = "eded",
-                Password = "3233dfdfer!",
-                Host = "192.168.1.31",
+                UserName = "one",
+                Password = "WWWeeerrr123",
+                Host = "26.197.183.236",
                 Port = 22
             };
         }
@@ -104,15 +104,15 @@ namespace fileManager.Services
         {
             string current = "";
 
-            if (path[0] == '/')
+            if (path[0] == '\\')
             {
                 path = path.Substring(1);
             }
 
             while (!string.IsNullOrEmpty(path))
             {
-                int p = path.IndexOf('/');
-                current += '/';
+                int p = path.IndexOf('\\');
+                current += '\\';
                 if (p >= 0)
                 {
                     current += path.Substring(0, p);

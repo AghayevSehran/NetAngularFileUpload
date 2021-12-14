@@ -74,7 +74,7 @@ export class FileuploadComponent {
 
     formData.append('myFile', files);
 
-    formData.append('moduleId', '1');
+    formData.append('moduleId', '2');
     return this.http.post('http://localhost:48608/FileManager', formData,
     {
       headers: new HttpHeaders()
